@@ -1,0 +1,16 @@
+{
+  "name": "microservices-simulation",
+  "version": "1.0.0",
+  "description": "Simulação de microsserviços para sistema de pedidos",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
