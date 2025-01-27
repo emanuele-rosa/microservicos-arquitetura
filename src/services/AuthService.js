@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import Logger from "../utils/Logger.js";
+import { Logger } from "../utils/Logger.js";
 
 class AuthService {
   constructor() {
@@ -64,3 +64,5 @@ class AuthService {
     return false;
   }
 }
+
+export { AuthService };

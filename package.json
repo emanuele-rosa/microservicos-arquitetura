@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Simulação de microsserviços para sistema de pedidos",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "node src/demo/testFlow.js"
   },
   "dependencies": {
     "uuid": "^9.0.0"

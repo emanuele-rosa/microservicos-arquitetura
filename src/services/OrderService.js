@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import Logger from "../utils/Logger.js";
+import { Logger } from "../utils/Logger.js";
 import OrderStatus from "../enums/OrderStatus.js";
 
 class OrderService {

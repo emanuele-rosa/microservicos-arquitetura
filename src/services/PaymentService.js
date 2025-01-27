@@ -1,4 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
 import PaymentStatus from "../enums/PaymentStatus.js";
+import OrderStatus from "../enums/OrderStatus.js"; // Adicionar esta importação
+import { Logger } from "../utils/Logger.js";
 
 class PaymentService {
   constructor(orderService) {
