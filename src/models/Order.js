@@ -2,7 +2,7 @@ class Order {
   constructor(id, userId, items, status = OrderStatus.CREATED) {
     this.id = id;
     this.userId = userId;
-    this.items = items; // Array of { productId, quantity, price }
+    this.items = items; // Array contendo: productId, quantity, price (por item)
     this.status = status;
     this.total = this.calculateTotal();
     this.createdAt = new Date();

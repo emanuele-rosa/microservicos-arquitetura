@@ -15,6 +15,7 @@ class Application {
     );
     this.paymentService = new PaymentService(this.orderService);
 
+    // Log indicando que todos os serviços foram inicializados
     Logger.log("Application", "All services initialized");
   }
 
@@ -23,24 +24,28 @@ class Application {
     try {
       // 1. Registrar usuário
       const user = this.authService.registerUser(
-        "john.doe",
-        "password123",
-        "john@example.com"
+        "emanuele.flor",
+        "emanuele123",
+        "emanuele@example.com"
       );
 
       // 2. Login
       const { sessionToken } = this.authService.login(
-        "john.doe",
-        "password123"
+        "emanuele.flor",
+        "emanuele123"
       );
 
       // 3. Adicionar produtos ao catálogo
       const product1 = this.productCatalogService.addProduct(
-        "Laptop",
+        "Notebook",
         1200.0,
         10
       );
-      const product2 = this.productCatalogService.addProduct("Mouse", 25.0, 50);
+      const product2 = this.productCatalogService.addProduct(
+        "Teclado",
+        100.0,
+        50
+      );
 
       // 4. Criar pedido
       const order = this.orderService.createOrder(sessionToken, [
@@ -51,10 +56,12 @@ class Application {
       // 5. Processar pagamento
       const payment = this.paymentService.processPayment(order.id, {
         type: "CREDIT_CARD",
-        cardNumber: "**** **** **** 1234",
+        cardNumber: "1234 1234 1234 1234",
       });
 
+      // Log indicando sucesso da demonstração
       Logger.log("Application", "Flow demonstration completed successfully");
+
       return { user, order, payment };
     } catch (error) {
       Logger.error(
